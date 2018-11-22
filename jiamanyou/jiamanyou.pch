@@ -1,0 +1,121 @@
+//
+//  jiamanyou.pch
+//  jiamanyou
+//
+//  Created by jiamanu on 2018/8/2.
+//  Copyright © 2018年 jiamanyou. All rights reserved.
+//
+
+#ifndef jiamanyou_h
+#define jiamanyou_h
+
+
+
+#import <AFNetworking.h>
+#import <PureLayout/PureLayout.h>
+#import <RETableViewManager/RETableViewManager.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+//class
+#import "UIButton+Swap.h"
+#import "NSString+Attribute.h"
+#import "UIButton+Block.h"
+#import "UIViewController+HUD.h"
+
+
+
+//block弱引用
+#define JWeakWithNameAndObject(_obj,_name) __weak typeof(_obj) weak##_name = _obj
+#define JWeak(_obj) JWeakWithNameAndObject(_obj,_obj)
+#define JWeakSelf JWeak(self)
+
+//色值
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define UIColorFromRGB1(rgbValue,alpha1) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alpha1]
+
+
+
+//颜色
+#define JBackGroundColor UIColorFromRGB(0xf6f6f6)
+//[UIColor colorWithRed:0.9647 green:0.9647 blue:0.9647 alpha:1]
+#define JRedColor  [UIColor redColor]
+#define JWhiteColor [UIColor whiteColor]
+#define JDarkGrayColor UIColorFromRGB(0x333333)
+#define JGrayColor UIColorFromRGB(0x666666)
+
+#define JOrangeColor UIColorFromRGB(0xff7e18)
+#define JOrangeColor1 UIColorFromRGB(0xf85032)//产品详情使用颜色
+#define JOrangeColor2 UIColorFromRGB(0xffe8e4)
+#define JOrangeColor3 UIColorFromRGB(0xdabdbd)  //我的红包列表颜色
+#define JOrangeColor4 UIColorFromRGB(0xff8f00)  //我的投资列表颜色
+#define JOrangeColor5 UIColorFromRGB(0xff5a5a)
+#define JOrangeColor6 UIColorFromRGB(0xff0000)
+
+
+
+
+
+#define JBlackColor UIColorFromRGB(0x000000)
+#define JBlackColor1 UIColorFromRGB(0x3b3b3b)
+#define JBlackColor2 UIColorFromRGB(0x333333)
+
+
+
+#define JLightGrayColor UIColorFromRGB(0x999999)
+#define JLightGrayColor1  UIColorFromRGB(0x777777)
+#define JLightGrayColor2  UIColorFromRGB(0x9c9c9c)
+#define JLightGrayColor3  UIColorFromRGB(0xf3f3f3)
+#define JLightGrayColor4  UIColorFromRGB(0xf6f6f6)
+#define JLightGrayColor5  UIColorFromRGB(0x6b6b6b)
+#define JLightGrayColor6  UIColorFromRGB(0x888888)
+#define JLightGrayColor7  UIColorFromRGB(0xcccccc)
+#define JLightGrayColor8  UIColorFromRGB(0xdfdfdf)
+#define JLightGrayColor9  UIColorFromRGB(0xdcdcdc)
+#define JLightGrayColor10  UIColorFromRGB(0xe5e5e5)
+#define JLightGrayColor11  UIColorFromRGB(0x6e6e6e)
+#define JLightGrayColor12  UIColorFromRGB(0xe4e5e1)
+#define JLightGrayColor13  UIColorFromRGB(0xe3e3e3)
+#define JLightGrayColor14  UIColorFromRGB(0xf8f8f8)
+
+
+
+#define JRedColor1 UIColorFromRGB(0xe73827)
+
+
+
+
+
+//字体
+#define JFont2 [UIFont systemFontOfSize:12]
+#define JFont3 [UIFont systemFontOfSize:13]
+#define JFont4 [UIFont systemFontOfSize:14]
+#define JFont5 [UIFont systemFontOfSize:15]
+#define JFont6 [UIFont systemFontOfSize:16]
+#define JFont7 [UIFont systemFontOfSize:17]
+#define JFont8 [UIFont systemFontOfSize:18]
+#define JFont9 [UIFont systemFontOfSize:19]
+#define JFont10 [UIFont systemFontOfSize:10]
+#define JFont20 [UIFont systemFontOfSize:20]
+
+
+
+//屏幕宽高
+#define JWindowWidth    [UIScreen mainScreen].bounds.size.width
+#define JWindowHeight    [UIScreen mainScreen].bounds.size.height
+
+//单元格分割线
+#define JSeparatorInset1 UIEdgeInsetsMake(0, JWindowWidth, 0, 0)
+#define JSeparatorInset2 UIEdgeInsetsMake(0, JMiddleSpacing, 0, 0)
+#define JSeparatorInset3 UIEdgeInsetsMake(0, JMiddleSpacing, 0, JMiddleSpacing)
+
+
+//默认间距
+#define JSmallSpacing 10
+#define JMiddleSpacing 15
+#define JBigSpacing 20
+
+//默认单元格高度
+#define JCellHeight 50
+
+
+#endif /* jiamanyou_h */
